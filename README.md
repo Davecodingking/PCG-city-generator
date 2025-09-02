@@ -1,2 +1,46 @@
-# PCG-city-generator
-Procedural City Generation: A Houdini-Based Approach for Artist-Focused Urban Environment Creation
+# Houdini 程序化城市生成器 (Houdini Procedural City Generator)
+
+本项目是一个基于Houdini的程序化数字资产（HDA），旨在为艺术家、设计师和开发者提供一个强大且高度可控的工具，用于快速生成定制化的城市和岛屿环境。项目核心是解决在保证大规模生成的同时，将创意控制权交还给艺术家的“生成式三-难困境”。
+
+![程序化城市生成效果图](https://placehold.co/800x400/1e1e1e/c8c8c8?text=在此处放置您的项目GIF或截图)
+*一个由该工具生成的城市示例*
+
+---
+
+## 核心特性 (Core Features)
+
+- **🎨 艺术家驱动的设计**: 通过灰度图、手绘曲线、自定义地形等直观方式精确控制城市宏观布局。
+- **🧩 模块化架构**: 包含独立的城市布局、道路网络、建筑和植被生成器，易于扩展和维护。
+- **🚀 Kitbash集成**: 内置强大的Kitbash实例化器，可将您自己的高精度模型库无缝集成到场景中，极大提升视觉细节。
+- **🎮 生产就绪 (Sim-Ready)**: 输出干净、可编辑的多边形几何体，优化后可直接用于Unreal Engine, Unity等游戏引擎和VFX渲染管线。
+
+---
+
+## 如何使用 (Getting Started)
+
+1.  下载项目中的 `.hda` 文件。
+2.  在Houdini中，通过 `File > Import > Houdini Digital Asset...` 导入HDA文件。
+3.  在Houdini的节点网络中，按 `Tab` 键并搜索 `procedural_city_generator` 来创建节点。
+4.  连接您的输入源（或使用默认设置）并开始调整参数以生成您的城市！
+
+---
+
+## 主要模块与输入 (Modules & Inputs)
+
+该HDA系统主要由以下几个部分组成：
+
+#### 输入方式 (Input Methods)
+- **自定义地图输入**: 使用一张灰度图来定义岛屿的整体形状和建筑密度。
+- **绘制公路曲线**: 手动绘制曲线以精确控制高速公路的走向和布局。
+- **添加热点**: 手动放置点来定义市中心或需要特殊处理的高密度区域。
+- **地形输入**: 导入您自己的地形模型，让城市能够完美地在其上生成。
+
+#### 核心生成器 (Core Generators)
+- **City_generator HDA**: 负责处理所有输入，生成宏观的城市布局、地形、道路网络和区域划分数据图。
+- **模块化资产生成器**: 一系列独立的生成器，用于根据数据图创建程序化的摩天大楼、高层住宅、房屋和植被。
+- **Kitbash_Instancer HDA**: 接收数据图和您打包好的高精度Kitbash模型，高效地将它们实例化到场景中的正确位置。
+
+## 依赖 (Dependencies)
+
+- **SideFX Houdini 20.0** 或更高版本。
+```eof
