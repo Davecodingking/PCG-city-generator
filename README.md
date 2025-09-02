@@ -4,7 +4,7 @@ This project is a Houdini Digital Asset (HDA) developed as the final thesis for 
 
 The core goal of this project is to address the "generative trilemma" by prioritizing artistic control and modularity, offering a robust alternative to purely data-driven methods for creating large-scale, production-ready urban worlds.
 
-!(https://placehold.co/800x400/1e1e1e/c8c8c8?text=Place+Your+Project+GIF+or+Screenshot+Here)
+![程序化城市生成效果图](https://placehold.co/800x400/1e1e1e/c8c8c8?text=在此处放置您的项目GIF或截图)
 *An example of a city generated with this HDA.*
 
 ## Core Features
